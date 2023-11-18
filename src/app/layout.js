@@ -1,8 +1,8 @@
-import { Inter } from "next/font/google";
+import { Gabarito } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const gabarito = Gabarito({ subsets: ["latin"] });
 
 export const metadata = {
   title: "AnimeListKu",
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${gabarito.className} bg-zinc-950`}>
         <Navbar />
         {children}
       </body>
