@@ -1,5 +1,5 @@
 import Link from "next/link";
-import InputSearch from "./InputSearch";
+import InputSearch from "./InputSearch.jsx";
 
 const Navbar = () => {
   return (
