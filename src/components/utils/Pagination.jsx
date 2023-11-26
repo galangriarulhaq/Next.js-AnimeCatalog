@@ -26,9 +26,12 @@ const Pagination = ({ page, lastPage, setPage }) => {
       <p>
         {page} of {lastPage}
       </p>
-      <button onClick={handleNextPage} className="transition-all hover:text-blue-700 underline">
-        Next
-      </button>
+
+      {page >= lastPage ? null : (
+        <button onClick={handleNextPage} className="transition-all hover:text-blue-700 underline">
+          Next
+        </button>
+      )}
     </div>
   );
 };
