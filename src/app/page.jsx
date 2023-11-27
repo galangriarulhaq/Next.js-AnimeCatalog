@@ -1,6 +1,6 @@
 import AnimeList from "@/components/AnimeList";
 import Header from "@/components/AnimeList/Header.jsx";
-import { getAnimeResponse, getNestedAnimeResponse } from "@/libs/api";
+import { getAnimeResponse, getNestedAnimeResponse, reproduce } from "@/libs/api";
 
 const Page = async () => {
   // const response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=8`);
@@ -9,8 +9,7 @@ const Page = async () => {
 
   const topAnime = await getAnimeResponse("top/anime", "limit=8");
   let recommendedAnime = await getNestedAnimeResponse("recommendations/anime", "entry");
-  recommendedAnime = { data: recommendedAnime.slice(0, 8) };
-
+  recommendedAnime = reproduce(recommendedAnime, 10);
   return (
     <div>
       <section>
