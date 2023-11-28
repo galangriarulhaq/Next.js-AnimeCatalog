@@ -1,5 +1,6 @@
 import Link from "next/link";
 import InputSearch from "./InputSearch.jsx";
+import UserGitHub from "./UserGitHub.jsx";
 
 const Navbar = () => {
   return (
@@ -9,6 +10,7 @@ const Navbar = () => {
           AnimeKu
         </Link>
         <InputSearch />
+        <UserGitHub />
       </div>
     </header>
   );
