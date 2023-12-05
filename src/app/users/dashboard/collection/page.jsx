@@ -16,10 +16,10 @@ const Page = async () => {
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {collection.map((collect, index) => {
           return (
-            <Link key={index} href={`/anime/${collect.anime_mal_id}`} className="relative border-2 border-violet-950">
-              <Image src="" alt="" width={350} height={350} className="w-full" />
-              <div className="flex justify-center items-center absolute bottom-0 w-full bg-violet-950 h-16">
-                <h5 className="text-xl text-center">{collect.anime_mal_id}</h5>
+            <Link key={index} href={`/anime/${collect.anime_mal_id}`} className="relative">
+              <Image src={collect.anime_image} alt="" width={350} height={350} className="w-full" />
+              <div className="flex justify-center items-center absolute bottom-0 w-full bg-violet-950 h-16 font-bold">
+                <h5 className="text-xl text-center">{collect.anime_title}</h5>
               </div>
             </Link>
           );

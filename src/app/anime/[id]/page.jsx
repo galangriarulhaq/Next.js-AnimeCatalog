@@ -19,7 +19,7 @@ const Page = async ({ params: { id } }) => {
         <h3 className="text-zinc-50">
           {anime.data.title} - {anime.data.year}
         </h3>
-        {!collection && user && <CollectionButton anime_mal_id={id} user_email={user?.email} />}
+        {!collection && user && <CollectionButton anime_mal_id={id} user_email={user?.email} anime_image={anime.data.images.webp.image_url} anime_title={anime.data.title} />}
       </div>
       <div className="pt-4 px-4 flex gap-2 text-zinc-50 overflow-x-auto">
         <div className="w-36 flex flex-col justify-center items-center rounded border border-zinc-50 p-2">
