@@ -8,12 +8,12 @@ const Page = async () => {
   return (
     <div className="mt-10 text-zinc-50 flex flex-col justify-center items-center">
       <h5 className="mb-10 text-2xl font-bold ">Welcome, {user?.name}</h5>
-      <Image src={user?.image} alt="..." width={250} height={250} />
+      <Image src={user?.image} alt="..." width={250} height={250} className="rounded-full" />
       <div className="flex flex-wrap gap-4 py-8">
-        <Link href="/users/dashboard/collection" className="bg-violet-950 text-slate-950 px-4 py-3 font-bold text-xl">
+        <Link href="/users/dashboard/collection" className="bg-violet-950 text-slate-950 px-4 py-3 font-bold text-xl rounded-full">
           My Collection
         </Link>
-        <Link href="/users/dashboard/comment" className="bg-violet-950 text-slate-950 px-4 py-3 font-bold text-xl">
+        <Link href="/users/dashboard/comment" className="bg-violet-950 text-slate-950 px-4 py-3 font-bold text-xl rounded-full">
           My Comment
         </Link>
       </div>

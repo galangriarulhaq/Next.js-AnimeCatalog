@@ -4,6 +4,8 @@ import Image from "next/image";
 import CollectionButton from "@/components/AnimeList/CollectionButton";
 import { authUserSession } from "@/libs/auth";
 import prisma from "@/libs/prisma";
+import CommentInput from "@/components/AnimeList/CommentInput";
+import CommentBox from "@/components/AnimeList/CommentBox";
 
 const Page = async ({ params: { id } }) => {
   const anime = await getAnimeResponse(`anime/${id}`);
@@ -42,6 +44,13 @@ const Page = async ({ params: { id } }) => {
       <div className="pt-4 px-4 flex sm:flex-nowrap flex-wrap gap-2 text-zinc-50">
         <Image src={anime.data.images.webp.image_url} alt={anime.data.images.jpg.image_url} width={250} height={250} />
         <p className="text-justify text-xl">{anime.data.synopsis}</p>
+      </div>
+      <h3 className="text-zinc-50 text-2xl px-10 py-4 mb-2">Comment : </h3>
+      <div className="px-28 py-4 p-4 ">
+        <CommentInput anime_mal_id={id} user_email={user?.email} username={user?.name} anime_title={anime.data.title} />
+        <div className=" box-border md:h-2/3 md:w-2/3 sm:h-full sm:w-full border-2 bg-slate-400 rounded-xl mb-2 ">
+          <CommentBox anime_mal_id={id} />
+        </div>
       </div>
       <div>
         <VideoPlayer youtubeId={anime.data.trailer.youtube_id} />

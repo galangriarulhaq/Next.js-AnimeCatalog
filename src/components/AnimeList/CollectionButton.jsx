@@ -7,7 +7,7 @@ import { BookmarkSimple } from "@phosphor-icons/react";
 const CollectionButton = ({ anime_mal_id, user_email, anime_image, anime_title }) => {
   const [isCreated, setIsCreated] = useState(false);
 
-  const handleButton = async (event) => {
+  const handleCollection = async (event) => {
     event.preventDefault();
 
     const data = { anime_mal_id, user_email, anime_image, anime_title };
@@ -21,6 +21,7 @@ const CollectionButton = ({ anime_mal_id, user_email, anime_image, anime_title }
     if (collection.status == 200) {
       setIsCreated(true);
     }
+    return;
   };
 
   return (
@@ -28,7 +29,7 @@ const CollectionButton = ({ anime_mal_id, user_email, anime_image, anime_title }
       {isCreated ? (
         <p className="text-zinc-50">Berhasil di tambahkan</p>
       ) : (
-        <button onClick={handleButton} className="px-2 py-1 bg-violet-950">
+        <button onClick={handleCollection} className="px-2 py-1 bg-violet-950">
           <BookmarkSimple size={32} />
         </button>
       )}
