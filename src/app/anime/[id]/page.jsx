@@ -46,11 +46,11 @@ const Page = async ({ params: { id } }) => {
         <p className="text-justify text-xl">{anime.data.synopsis}</p>
       </div>
       <h3 className="text-zinc-50 text-2xl px-10 py-4 mb-2">Comment : </h3>
-      <div className="px-28 py-4 p-4 ">
-        <CommentInput anime_mal_id={id} user_email={user?.email} username={user?.name} anime_title={anime.data.title} />
-        <div className=" box-border md:h-2/3 md:w-2/3 sm:h-full sm:w-full border-2 bg-slate-400 rounded-xl mb-2 ">
+      <div className="md:px-28 sm:px-10 md:py-4 sm:py-2 p-4 ">
+        <div className=" md:w-2/3 sm:w-full h-96 bg-transparent border-4 border-zinc-700 rounded-xl mb-2 py-2 px-1 overflow-auto ">
           <CommentBox anime_mal_id={id} />
         </div>
+        <CommentInput anime_mal_id={id} user_email={user?.email} username={user?.name} anime_title={anime.data.title} />
       </div>
       <div>
         <VideoPlayer youtubeId={anime.data.trailer.youtube_id} />
