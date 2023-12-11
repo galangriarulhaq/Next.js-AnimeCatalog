@@ -29,7 +29,7 @@ const CollectionButton = ({ anime_mal_id, user_email, anime_image, anime_title }
       {isCreated ? (
         <p className="text-zinc-50">Berhasil di tambahkan</p>
       ) : (
-        <button onClick={handleCollection} className="px-2 py-1 bg-violet-950">
+        <button onClick={handleCollection} className="px-2 py-1 bg-violet-950 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-500 hover:text-zinc-50 duration-300">
           <BookmarkSimple size={32} />
         </button>
       )}

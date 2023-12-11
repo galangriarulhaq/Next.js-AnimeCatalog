@@ -18,7 +18,7 @@ const Header = ({ title }) => {
           <ArrowSquareLeft size={32} />
         </button>
       </div>
-      <h3 className="text-2xl text-zinc-50 text-center font-bold mb-5">{title}</h3>
+      <h3 className="text-2xl text-zinc-50 text-center cursor-pointer font-bold mb-5 transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300">{title}</h3>
     </>
   );
 };

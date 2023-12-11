@@ -24,19 +24,19 @@ const Page = async ({ params: { id } }) => {
         {!collection && user && <CollectionButton anime_mal_id={id} user_email={user?.email} anime_image={anime.data.images.webp.image_url} anime_title={anime.data.title} />}
       </div>
       <div className="pt-4 px-4 flex gap-2 text-zinc-50 overflow-x-auto">
-        <div className="w-36 flex flex-col justify-center items-center rounded border border-zinc-50 p-2">
+        <div className="w-36 flex flex-col justify-center items-center rounded border border-zinc-50 p-2 transition ease-in-out delay-150 bg-transparent hover:-translate-y-1 hover:scale-110 hover:bg-zinc-50 hover:text-indigo-950 duration-300">
           <h4>Ranking</h4>
           <p>{anime.data.rank}</p>
         </div>
-        <div className="w-36 flex flex-col justify-center items-center rounded border border-zinc-50 p-2">
+        <div className="w-36 flex flex-col justify-center items-center rounded border border-zinc-50 p-transition ease-in-out delay-150 bg-transparent hover:-translate-y-1 hover:scale-110 hover:bg-zinc-50 hover:text-indigo-950 duration-300">
           <h4>Score</h4>
           <p>{anime.data.score}</p>
         </div>
-        <div className="w-36 flex flex-col justify-center items-center rounded border border-zinc-50 p-2">
+        <div className="w-36 flex flex-col justify-center items-center rounded border border-zinc-50 p-transition ease-in-out delay-150 bg-transparent hover:-translate-y-1 hover:scale-110 hover:bg-zinc-50 hover:text-indigo-950 duration-300">
           <h4>Anggota</h4>
           <p>{anime.data.members}</p>
         </div>
-        <div className="w-36 flex flex-col justify-center items-center rounded border border-zinc-50 p-2">
+        <div className="w-36 flex flex-col justify-center items-center rounded border border-zinc-50 p-transition ease-in-out delay-150 bg-transparent hover:-translate-y-1 hover:scale-110 hover:bg-zinc-50 hover:text-indigo-950 duration-300">
           <h4>Episode</h4>
           <p>{anime.data.episodes}</p>
         </div>
@@ -50,7 +50,7 @@ const Page = async ({ params: { id } }) => {
         <div className=" md:w-2/3 sm:w-full h-96 bg-transparent border-4 border-zinc-700 rounded-xl mb-2 py-2 px-1 overflow-auto ">
           <CommentBox anime_mal_id={id} />
         </div>
-        <CommentInput anime_mal_id={id} user_email={user?.email} username={user?.name} anime_title={anime.data.title} />
+        {user && <CommentInput anime_mal_id={id} user_email={user?.email} username={user?.name} anime_title={anime.data.title} />}
       </div>
       <div>
         <VideoPlayer youtubeId={anime.data.trailer.youtube_id} />
