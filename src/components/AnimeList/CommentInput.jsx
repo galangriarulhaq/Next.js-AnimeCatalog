@@ -36,7 +36,7 @@ const CommentInput = ({ anime_mal_id, user_email, username, anime_title }) => {
     <div className="grid ">
       {isCreated && <p className="text-zinc-50">Postingan Terkirim....</p>}
       <textarea placeholder="comment here..." onChange={handleInput} value={comment} className=" w-64 bg-transparent border-4 border-zinc-700 text-zinc-50 rounded " />
-      <button onClick={handlePosting} className="w-32 mt-2 py-2 px-3 text-zinc-50 bg-blue-500 rounded-full mb-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-zinc-100 hover:text-indigo-950 duration-300">
+      <button onClick={handlePosting} className="w-32 mt-2 py-2 px-3 text-zinc-50 bg-blue-500 rounded-full mb-2 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-blue-900 duration-300">
         Posting
       </button>
     </div>
