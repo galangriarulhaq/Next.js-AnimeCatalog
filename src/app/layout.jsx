@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 const gabarito = Gabarito({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "AnimeListKu",
-  description: "Website  Anime List Ku",
+  title: "Anime Catalog",
+  description: "Website  Anime Catalog",
 };
 
 export default function RootLayout({ children }) {
