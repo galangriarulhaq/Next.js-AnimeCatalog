@@ -10,9 +10,13 @@ const AnimeList = ({ api }) => {
             <Image src={anime.images.webp.image_url} alt="..." width={350} height={350} className="object-cover" />
             <div className="bg-gray-700 grid-cols-1 p-2">
               <h3 className="font-bold text-md mb-2">{anime.title}</h3>
-              <h4 className="text-sm ">Episode : {anime.episodes}</h4>
-              <h4 className="text-sm ">Score : {anime.score}</h4>
-              <h4 className="text-sm ">Rating : {anime.rating}</h4>
+              {anime.score && (
+                <div>
+                  <h4 className="text-sm ">Episode : {anime.episodes}</h4>
+                  <h4 className="text-sm ">Score : {anime.score}</h4>
+                  <h4 className="text-sm ">Rating : {anime.rating}</h4>
+                </div>
+              )}
             </div>
           </Link>
         );

@@ -9,7 +9,7 @@ const Page = async () => {
 
   const topAnime = await getAnimeResponse("top/anime", "limit=12");
   let recommendedAnime = await getNestedAnimeResponse("recommendations/anime", "entry");
-  recommendedAnime = reproduce(recommendedAnime, 12);
+  recommendedAnime = reproduce(recommendedAnime, 6);
   return (
     <div>
       <section>
