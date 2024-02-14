@@ -8,7 +8,12 @@ const AnimeList = ({ api }) => {
         return (
           <Link href={`/anime/${anime.mal_id}`} className="cursor-pointer text-zinc-50 hover:text-blue-700 transition-all" key={anime.mal_id}>
             <Image src={anime.images.webp.image_url} alt="..." width={350} height={350} className="object-cover" />
-            <h3 className="font-bold text-md p-4 ">{anime.title}</h3>
+            <div className="bg-gray-700 grid-cols-1 p-2">
+              <h3 className="font-bold text-md mb-2">{anime.title}</h3>
+              <h4 className="text-sm ">Episode : {anime.episodes}</h4>
+              <h4 className="text-sm ">Score : {anime.score}</h4>
+              <h4 className="text-sm ">Rating : {anime.rating}</h4>
+            </div>
           </Link>
         );
       })}

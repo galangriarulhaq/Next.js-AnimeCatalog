@@ -1,8 +1,8 @@
-import { Gabarito } from "next/font/google";
+import { Merienda } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
-const gabarito = Gabarito({ subsets: ["latin"] });
+const merienda = Merienda({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Anime Catalog",
@@ -12,7 +12,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${gabarito.className} bg-zinc-950`}>
+      <body className={`${merienda.className} bg-zinc-950`}>
         <Navbar />
         {children}
       </body>
